@@ -19,8 +19,7 @@ func prestart() {
 	if err != nil {
 	    panic(err)
 	}
-	client.Health()
-	services, _, sErr := client.Health().Service(`rethinkdb`, ``, true, nil)
+	services, _, sErr := client.Health().Service(os.Getenv("SERVICE_NAME"), ``, true, nil)
 	if sErr != nil {
 	    panic(sErr)
 	}
