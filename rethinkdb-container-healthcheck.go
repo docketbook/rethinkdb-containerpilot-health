@@ -55,7 +55,7 @@ type ServerStatus struct {
 
 func healthCheck() {
 	session, err := r.Connect(r.ConnectOpts{
-	    Address: "172.17.0.4:28015",
+	    Address: "127.0.0.1:28015",
 	})
 	if err != nil {
 	    panic(err)
