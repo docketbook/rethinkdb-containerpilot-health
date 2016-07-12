@@ -19,7 +19,7 @@ func prestart() {
 	if err != nil {
 	    panic(err)
 	}
-	services, _, sErr := client.Health().Service(os.Getenv("SERVICE_NAME"), ``, true, nil)
+	services, _, sErr := client.Health().Service(os.Getenv("SERVICE_NAME"), os.Getenv("CONSUL_ENVIRONMENT"), true, nil)
 	if sErr != nil {
 	    panic(sErr)
 	}
