@@ -13,7 +13,7 @@ var session *r.Session
 
 func prestart() {
 	config := consul.DefaultConfig()
-	config.Address = os.Getenv("CONSUL_ADDRESS")
+	config.Address = os.Getenv("CONSUL_ADDRESS") + ":8500"
 	fmt.Println(config.Address)
 	client, err := consul.NewClient(config)
 	if err != nil {
